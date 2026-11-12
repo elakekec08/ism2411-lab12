@@ -103,4 +103,37 @@ with open("data/sales.csv", "r", newline="") as file:
 
         print(f"{product}: ${total:.2f}")
 
-print(f"Total Revenue: ${dict_total:.2f}")
+print(f"Total Revenue: ${dict_total:.2f}") 
+
+# ---Exercise 7---
+print("\nExercise 7: Sales Summary")
+
+sales_summary = {}
+
+with open("data/sales.csv", "r", newline="") as file:
+    reader = csv.DictReader(file)
+
+    for row in reader:
+        product = row["product"]
+        price = float(row["price"])
+        quantity = int(row["quantity"])
+        total = price * quantity
+
+        if product in sales_summary:
+            sales_summary[product] += total
+        else:
+            sales_summary[product] = total
+
+for product in sorted(sales_summary):
+    print(f"{product}: ${sales_summary[product]:.2f}")
+
+
+# ---Exercise 8---
+print("\nExercise 8: Append Mode Log")
+
+timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+with open("data/run_log.txt", "a") as file:
+    file.write(f"{timestamp} - Total Revenue: ${total_revenue:.2f}\n")
+
+print("Sales log updated.")
