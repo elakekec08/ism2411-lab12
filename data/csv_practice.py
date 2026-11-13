@@ -1,6 +1,17 @@
 # ISM2411 Lab 12
 # Ela Kekec
 
+# Reflection 1:
+# Python helps save time by automatically handling tasks like organizing
+# and cleaning large datasets. Excel is more convenient for looking at
+# and changing data quickly, while Python works better for repeated tasks.
+
+# Reflection 2:
+# A company could use append mode to record its sales each day.
+# This is helpful because it allows new data to be added without
+# removing older information, making it easier to monitor sales over time.
+
+
 import csv
 from datetime import datetime
 
